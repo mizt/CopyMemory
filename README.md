@@ -1,4 +1,4 @@
-# Copy
+# CopyMemory
 
 	MacBook Air (M1, 2020)
 	Chip: M1
