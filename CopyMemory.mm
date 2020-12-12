@@ -17,13 +17,17 @@ int main(int argc, char *argv[]) {
 		
 		double sum = 0;
 		
+		int num = 0;
+		
 		for(int n=0; n<100; n++) {
+			
 			double then = CFAbsoluteTimeGetCurrent();
 			for(int i=0; i<h; i++) {
 				uint32 *p = src+i*w;
 				uint32 *q = dst+i*w;
 				for(int j=0; j<w; j++) {
-					*p++ = *q++;
+					*p =  0xFF000000|random()%0xFFFFFF;
+					*q++ = *p++;
 				}
 			}
 			double diff = CFAbsoluteTimeGetCurrent()-then;
@@ -33,15 +37,16 @@ int main(int argc, char *argv[]) {
 		
 		NSLog(@"rows = %f",sum/100.0);
 		
-		sum = 0;
 		
 		for(int n=0; n<100; n++) {
+		
 			double then = CFAbsoluteTimeGetCurrent();
 			for(int j=0; j<w; j++) {
 				uint32 *p = src+j;
 				uint32 *q = dst+j;
 				for(int i=0; i<h; i++) {
-					*p = *q;
+					*p = 0xFF000000|random()%0xFFFFFF;
+					*q = *p;
 					p+=w;
 					q+=w;
 				}
