@@ -22,5 +22,5 @@ Benchmark of memory copy speed in row and column directions.
 
 ||rows|cols|
 |:--|:-:|:-:|
-|M1|0.00001 sec|0.0005 sec|
-|Intel|0.002 sec|0.045 sec|
+|M1| 0.007 sec | 0.015 sec |
+|Intel| 0.015 sec |0.035 sec |
